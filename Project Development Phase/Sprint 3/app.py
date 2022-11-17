@@ -32,7 +32,7 @@ def upload():
         
         f=request.files['file']
         basepath=os.path.dirname('__file__')
-        filepath=os.path.abspath(filename)
+        filepath=os.path.abspath(f.filename)
         f.save(filepath)
 
         img=load_img(filepath,target_size=(64,64))
